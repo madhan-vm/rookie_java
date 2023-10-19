@@ -3,9 +3,22 @@ package OOPs.Inheritance.challenge;
 public class BankAccounts {
     private int accountNumber;
     private double accountBalance = 0.0;
-    private String customerName;
+    private String customerName = "";
     private String email;
     private int phoneNumber;
+
+    public BankAccounts() {
+        System.out.println("Empty");
+    }
+
+    public BankAccounts(int accountNumber, double accountBalance, String customerName, String email, int phoneNumber) {
+        this.accountNumber = accountNumber;
+        this.accountBalance = accountBalance;
+        this.customerName = customerName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+
+    }
 
     public int getAccountNumber() {
         return accountNumber;
@@ -38,7 +51,7 @@ public class BankAccounts {
 
     public void setCustomerName(String customerName) {
 
-        if (this.customerName.isEmpty()) {
+        if (customerName == "") {
             this.customerName = "Anonymous name";
             return;
         }
@@ -54,8 +67,9 @@ public class BankAccounts {
     }
 
     public void depositBalance(int depositedAmount) {
+        accountBalance += depositedAmount;
         System.out.println("The amount of $" + depositedAmount + " is Deposited");
-        System.out.println("Current Balance stands at $" + (depositedAmount + accountBalance));
+        System.out.println("Current Balance stands at $" + (depositedAmount));
     }
 
     public void withDrawBalance(int withDrawAmount) {
@@ -68,8 +82,9 @@ public class BankAccounts {
             System.out.println(" There is not enough to withdraw");
             return;
         }
+        accountBalance -= withDrawAmount;
         System.out.println("The amount of $" + withDrawAmount + " is withdrawn");
-        System.out.println("Current Balance stands at $" + (accountBalance - withDrawAmount));
+        System.out.println("Current Balance stands at $" + (accountBalance));
 
     }
 
