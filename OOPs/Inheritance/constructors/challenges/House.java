@@ -2,7 +2,7 @@ package OOPs.Inheritance.constructors.challenges;
 
 public class House {
 
-    private String color;
+    private  String color;
 
     public House(String color) {
         this.color = color;
