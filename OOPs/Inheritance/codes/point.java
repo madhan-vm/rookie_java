@@ -31,10 +31,7 @@ class Point {
         this.y = y;
     }
 
-    public double distance() {
-        double result = Math.sqrt((y-x)*(y-x)+())
-        return result ;
-    }
+   
 
    
 
